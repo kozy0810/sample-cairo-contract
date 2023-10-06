@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  katana:
+    build:
+      context: .
+      dockerfile: dockerfiles/katana.Dockerfile
+    # command: []
+    volumes:
+      - '.:/workspace'
+    working_dir: /workspace
+    ports:
+      - "5050:5050"
+    # healthcheck:
+    #   test: ['CMD-SHELL', 'curl --request POST --url http://localhost:5050 content-type: application/json {"id": 1, "jsonrpc": "2.0", "method": "starknet_chainId"}']
+    #   interval: 10s
+    #   timeout: 5s
+    #   retries: 5

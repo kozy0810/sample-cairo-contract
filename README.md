@@ -1,0 +1,1 @@
+## sample cairo contract
